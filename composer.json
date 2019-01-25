@@ -6,7 +6,7 @@
         "cookie",
         "consent"
     ],
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Joris van de Sande",
@@ -23,9 +23,9 @@
     ],
     "require": {
         "php": "^7.1.3",
-        "symfony/config": "^4.0",
-        "symfony/dependency-injection": "^4.0",
-        "symfony/http-kernel": "^4.0",
+        "symfony/config": "^3.4 || ^4.0",
+        "symfony/dependency-injection": "^3.4 || ^4.0",
+        "symfony/http-kernel": "^3.4 || ^4.0",
         "twig/twig" : "^2.0"
     },
     "require-dev": {
