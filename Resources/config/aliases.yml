@@ -1,0 +1,2 @@
+services:
+    fh_cookie_guard.twig.cookie_guard_extension: '@FH\Bundle\CookieGuardBundle\Twig\CookieGuardExtension'
