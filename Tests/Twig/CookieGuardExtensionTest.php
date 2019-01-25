@@ -106,6 +106,14 @@ final class CookieGuardExtensionTest extends \PHPUnit\Framework\TestCase
         Assert::assertEquals('cookie accepted', $extension->showIfCookieAccepted('cookie accepted'));
     }
 
+    public function testName(): void
+    {
+        // arrange
+        $extension = $this->createCookieGuardExtension();
+
+        Assert::assertEquals(CookieGuardExtension::class, $extension->getName());
+    }
+
     private function createRequestWithCookie(): Request
     {
         return new Request([], [], [], [
