@@ -26,7 +26,6 @@ final class FHCookieGuardExtension extends Extension
         $container->setParameter('fh_cookie_guard.cookie_name', $config['cookie_name']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('aliases.yml');
         $loader->load('twig.yml');
     }
 }
