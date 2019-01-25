@@ -16,6 +16,37 @@ final class CookieGuardExtensionTest extends \PHPUnit\Framework\TestCase
 {
     private const COOKIE_NAME = 'test-cookie';
 
+    public function testFilterExistence(): void
+    {
+        // arrange
+        $extension = $this->createCookieGuardExtension();
+
+        $filterNames = [];
+        /** @var \Twig_Filter $filter */
+        foreach ($extension->getFilters() as $filter) {
+            Assert::assertInstanceOf(\Twig_Filter::class, $filter);
+            $filterNames[] = $filter->getName();
+        }
+
+        Assert::assertContains('cookie_guard', $filterNames);
+    }
+
+    public function testFunctionExistence(): void
+    {
+        // arrange
+        $extension = $this->createCookieGuardExtension();
+
+        $functionNames = [];
+        /** @var \Twig_Function $filter */
+        foreach ($extension->getFunctions() as $function) {
+            Assert::assertInstanceOf(\Twig_Function::class, $function);
+            $functionNames[] = $function->getName();
+        }
+
+        Assert::assertContains('cookie_settings_submitted', $functionNames);
+        Assert::assertContains('cookie_settings_accepted', $functionNames);
+    }
+
     public function testCookieSettingsAreNotAccepted(): void
     {
         // arrange
