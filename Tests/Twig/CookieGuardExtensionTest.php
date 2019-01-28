@@ -111,6 +111,7 @@ final class CookieGuardExtensionTest extends \PHPUnit\Framework\TestCase
         // arrange
         $extension = $this->createCookieGuardExtension();
 
+        // act && assert
         Assert::assertEquals(CookieGuardExtension::class, $extension->getName());
     }
 
