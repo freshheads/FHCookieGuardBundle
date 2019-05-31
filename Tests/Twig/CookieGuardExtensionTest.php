@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Environment;
+use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 /**
@@ -27,7 +28,7 @@ final class CookieGuardExtensionTest extends TestCase
         $filterNames = [];
         /** @var \Twig_Filter $filter */
         foreach ($extension->getFilters() as $filter) {
-            Assert::assertInstanceOf(\Twig_Filter::class, $filter);
+            Assert::assertInstanceOf(TwigFilter::class, $filter);
             $filterNames[] = $filter->getName();
         }
 
@@ -143,7 +144,7 @@ final class CookieGuardExtensionTest extends TestCase
     }
 
     /**
-     * @return MockObject|\Twig_Environment
+     * @return MockObject|Environment
      */
     private function createTwigEnvironmentMock(string $content = 'cookie not accepted', bool $show = false): MockObject
     {
