@@ -10,5 +10,3 @@ services:
     FH\Bundle\CookieGuardBundle\Twig\CookieGuardExtension:
         bind:
             $cookieName: '%fh_cookie_guard.cookie_name%'
-        tags:
-            - { name: twig.extension }
